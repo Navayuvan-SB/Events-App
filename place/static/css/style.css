@@ -125,6 +125,20 @@ input[type="button"] {
   font-weight: 600;
 }
 
+.events .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.events .header a {
+  padding: 10px 20px;
+  background-color: #0f9d58;
+  color: #fff;
+  font-weight: 600;
+}
+
 .events .event {
   padding: 20px;
   display: flex;
@@ -132,10 +146,6 @@ input[type="button"] {
   flex-direction: row;
   align-items: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.events h2 {
-  margin-bottom: 30px;
 }
 
 .events .event .info h4 {

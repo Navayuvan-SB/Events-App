@@ -1,0 +1,30 @@
+{% extends 'base_generic.html' %}
+
+
+{% block content %}
+
+<div class="events row">
+
+  <div class="col-md-12">
+    <h2>Events</h2>
+  </div>
+
+  {% for event in event_list %}
+
+  <div class="col-md-6">
+    <div class="event">
+      <div class="info">
+        <h4>{{event.title}}</h4>
+        <i>{{event.place.address}}, {{event.place.city}}</i>
+      </div>
+      <div class="action">
+        <a href="">View Event</a>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+  
+{% endblock content %}
+  

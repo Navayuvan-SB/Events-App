@@ -21,7 +21,9 @@ class EventTime(models.Model):
 
     all_day = models.BooleanField()
 
-    from_time = models.DateTimeField(
-        verbose_name='start time of the event', default=None)
-    end_time = models.DateTimeField(
-        verbose_name='end time of the event', default=None)
+    event_date = models.DateField(default=None)
+
+    from_time = models.TimeField(
+        verbose_name='start time of the event', null=True, blank=True)
+    end_time = models.TimeField(
+        verbose_name='end time of the event', null=True, blank=True)

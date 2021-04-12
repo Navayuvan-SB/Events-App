@@ -1,15 +1,11 @@
-{% extends 'base_generic.html' %}
-
-
-{% block content %}
+{% extends 'base_generic.html' %} {% block content %}
 
 <div class="events row">
-
   <div class="col-md-12">
     <h2>Events</h2>
   </div>
 
-  {% for event in event_list %}
+  {% if event_list %} {% for event in event_list %}
 
   <div class="col-md-6">
     <div class="event">
@@ -25,6 +21,12 @@
 
   {% endfor %}
 </div>
-  
-{% endblock content %}
-  
+
+{% else %} 
+
+<div class="not-found-wrapper">
+<p>No events found</p>
+<a href="">Add Events</a> 
+</div>
+
+{% endif %} {% endblock content %}

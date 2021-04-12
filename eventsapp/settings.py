@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'taggit',
     'events.apps.EventsConfig',
     'place.apps.PlaceConfig',
     'leaflet',

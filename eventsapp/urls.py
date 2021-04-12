@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('event/', include('events.urls')),
+    path('', RedirectView.as_view(url='event/', permanent=True)),
 ]
 
 urlpatterns += [

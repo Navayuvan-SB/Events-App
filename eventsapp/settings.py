@@ -36,6 +36,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'events.apps.EventsConfig',
+    'place.apps.PlaceConfig',
     'leaflet',
     'django.contrib.gis',
     'django.contrib.admin',

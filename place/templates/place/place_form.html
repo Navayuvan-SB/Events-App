@@ -1,0 +1,77 @@
+{% extends 'base_generic.html' %} 
+
+
+
+{% block media %}
+{{ form.media }}
+{% endblock media %}
+    
+
+{% block content %}
+
+
+<div class="add-place">
+  <form enctype="multipart/form-data" method="post" action="">
+    {% csrf_token %} 
+    
+    <div class="row">
+
+      <div class="col-md-4 col-sm-1 input-wrapper">
+
+        {{form.title.label}}
+        {{form.title}}
+
+      </div>
+
+      <div class="col-md-4 col-sm-1 input-wrapper">
+        
+        {{form.description.label}}
+        {{form.description}}
+
+      </div>
+
+      <div class="col-md-4 col-sm-1 input-wrapper">
+        
+        {{form.address.label}}
+        {{form.address}}
+
+      </div>
+      <div class="col-md-4 col-sm-1 input-wrapper">
+        
+        {{form.city.label}}
+        {{form.city}}
+
+      </div>
+
+      <div class="col-md-4 col-sm-1 input-wrapper">
+        
+        {{form.phone.label}}
+        {{form.phone}}
+
+      </div>
+      <div class="col-md-4 col-sm-1">
+        
+        
+
+      </div>
+
+      {% for formset in inlines %}
+      <div class="col-md-4 col-sm-1">
+      {{formset.as_p}}
+      </div>
+      {% endfor %}
+
+      <div class="col-md-8 col-sm-1">
+        {{form.location}}
+
+      </div>
+
+
+
+    </div>
+    
+    
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+{% endblock content %}

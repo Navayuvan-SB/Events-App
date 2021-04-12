@@ -1,0 +1,68 @@
+{% extends 'base_generic.html' %} {% block title %} {{place.title}} 
+{% endblock title %} {% block content %} {% load leaflet_tags %} {% leaflet_css %} 
+{% leaflet_js %}
+
+<div class="row place-detail">
+  <div class="col-md-6">
+    <div class="header">
+      <h1>{{place.title}}</h1>
+      <p>{{place.description}}</p>
+    </div>
+
+    <div class="address">
+      <div class="wrapper">
+        <h2>Address</h2>
+        <p>{{place.address}}</p>
+      </div>
+
+      <div class="wrapper">
+        <h2>City</h2> 
+        <p>{{place.city}}</p>
+      </div>
+
+      <div class="wrapper">
+        <h2>Contact</h2>
+        <p>{{place.phone}}</p>
+      </div>
+    </div>
+
+    <div class="types">
+        <h2>Place types</h2>
+        <div class="types-wrapper">
+            
+            {% for place_type in place.placetype_set.all %}
+                <div class="type">
+                    <p>{{place_type.place_type}}</p>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="actions">
+
+        <a href="{% url 'edit-place' place.pk %}">Edit</a>
+        <a href="{% url 'delete-place' place.pk %}">Delete</a>
+
+    </div>
+
+  </div>
+
+  <div class="col-md-6">
+    <div class="map">{% leaflet_map "main" callback="map_init" %}</div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function map_init(map, options) {
+    // get point lat and lon
+    var lon = "{{ place.location.x }}";
+    var lat = "{{ place.location.y }}";
+
+    // zoom to point & add it to map
+    map.setView([lat, lon], 12);
+    L.marker([lat, lon]).addTo(map);
+  }
+</script>
+
+{% endblock content %}

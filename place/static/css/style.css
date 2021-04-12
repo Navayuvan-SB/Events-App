@@ -107,3 +107,65 @@ input[type="button"] {
 .events .event .action a:hover {
   text-decoration: none;
 }
+
+.event-detail .header h1 {
+  font-size: 2rem;
+}
+
+.event-detail .tags {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.event-detail .tags p {
+  color: #fff;
+  font-weight: 500;
+  background-color: #0f9d58;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin: 10px 15px 10px 0px;
+}
+
+.event-detail .header p {
+  font-size: 1rem;
+  color: #585858;
+  margin-bottom: 0;
+}
+
+.event-detail .time-slots .time-slot {
+  padding: 12px 0;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.event-detail .time-slots .time-slot .time-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.event-detail .time-slots .time-slot .time-info svg {
+  width: 20px;
+  height: 20px;
+}
+
+.event-detail .time-slots .time-slot .time-info p {
+  margin: 0;
+  color: #585858;
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+.event-detail .time-slots .time-slot .time-info p span {
+  font-weight: 500;
+}
+
+.event-detail .map-wrapper .map {
+    margin-top: 5rem;
+}
+
+.event-detail .map-wrapper .map h4 {
+  margin-bottom: 20px;
+}

@@ -82,7 +82,8 @@
 }
 
 input,
-textarea {
+textarea,
+select {
   outline: none;
   background-color: rgb(243, 243, 243);
   border-radius: 5px;
@@ -129,7 +130,7 @@ input[type="button"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .events .header a {
@@ -165,6 +166,29 @@ input[type="button"] {
 
 .events .event .action a:hover {
   text-decoration: none;
+}
+
+.filter_form {
+  width: 100%;
+  padding: 0px 15px 15px 15px;
+  margin-bottom: 30px;
+}
+
+.filter_form input,
+select {
+  margin: 0;
+}
+
+.filter_form .col-md-2,
+.filter_form .col-md-3 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.filter_form .col-md-2:nth-child(5) {
+  align-items: flex-end;
 }
 
 .event-detail .header h1 {

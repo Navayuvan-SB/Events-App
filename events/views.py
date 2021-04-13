@@ -4,12 +4,20 @@ from .models import Event, EventTime
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+from .filters import EventFilter
+
 
 class EventsListView(LoginRequiredMixin, generic.ListView):
     model = Event
 
     def get_queryset(self):
         return Event.objects.filter(created_by__exact=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = EventFilter(
+            self.request.GET, queryset=self.get_queryset())
+        return context
 
 
 class EventDetailView(UserPassesTestMixin, LoginRequiredMixin, generic.DetailView):

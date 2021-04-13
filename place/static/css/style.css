@@ -24,6 +24,12 @@
   margin-bottom: 5px;
 }
 
+.login-wrapper p.help-text {
+  width: 100%;
+  text-align: center;
+  color: #424242;
+}
+
 .login-wrapper .input-wrapper {
   display: flex;
   flex-direction: column;

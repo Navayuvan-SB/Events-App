@@ -1,0 +1,38 @@
+{% extends 'base_generic.html' %} {% block content %}
+
+<form method="post" class="add-event-form">
+  {% csrf_token %}
+  <div class="row inputs">
+    <div class="col-md-3">
+      <div class="input-wrapper">
+        {{form.event_date.label}} {{form.event_date}}
+      </div>
+    </div>
+
+    <div class="col-md-1">
+      <div class="input-wrapper">{{form.all_day.label}} {{form.all_day}}</div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-wrapper">
+        {{form.from_time.label}} {{form.from_time}}
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-wrapper">{{form.end_time.label}} {{form.end_time}}</div>
+    </div>
+  </div>
+
+  {% if is_request_from_update %}
+  <input type="submit" value="Submit" name="submit" />
+
+  {% else %}
+
+  <input type="submit" value="Add another" name="next" />
+  <input type="submit" value="Submit" name="final" />
+
+  {% endif %}
+</form>
+
+{% endblock content %}

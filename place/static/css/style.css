@@ -589,6 +589,40 @@ select {
   flex-direction: column;
 }
 
+.add-event-form .inputs .input-wrapper.place {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add-event-form .inputs .input-wrapper.place .inputs {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.add-event-form .inputs .input-wrapper.place .inputs select {
+  width: 100%;
+}
+
+.add-event-form .inputs .input-wrapper.place a {
+  width: 10%;
+  margin-left: 10px;
+  margin-top: 22px;
+}
+
+.add-event-form .inputs .input-wrapper.place a .add-place-wrapper {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f9d582b;
+  border: 1px solid #0f9d58;
+  border-radius: 50%;
+}
+
 .add-event-form .inputs .input-wrapper input {
   margin: 0;
   margin-bottom: 30px;

@@ -193,9 +193,71 @@ input[type="button"] {
   margin-bottom: 0;
 }
 
+.event-detail .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-detail .header .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.event-detail .header .actions .wrapper,
+.event-detail .time-slot .actions .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 0px 5px;
+}
+
+.event-detail .time-slot .actions .wrapper {
+  margin: 5px 0;
+}
+
+.event-detail .header .actions .wrapper:nth-child(1),
+.event-detail .time-slot .actions .wrapper:nth-child(1) {
+  background-color: #0f9d582b;
+  border: 1px solid #0f9d58;
+}
+
+.event-detail .header .actions .wrapper:nth-child(1) a,
+.event-detail .header .actions .wrapper:nth-child(2) a,
+.event-detail .time-slot .actions .wrapper:nth-child(1) a,
+.event-detail .time-slot .actions .wrapper:nth-child(2) a {
+  margin-bottom: 2px;
+}
+
+.event-detail .header .actions .wrapper:nth-child(2),
+.event-detail .time-slot .actions .wrapper:nth-child(2) {
+  background-color: #db44372b;
+  border: 1px solid #db4437;
+}
+
+.event-detail .header .actions a svg {
+  width: 20px;
+  height: 20px;
+}
+
+.event-detail .time-slot .actions a svg {
+  width: 15px;
+  height: 15px;
+}
+
 .event-detail .time-slots .time-slot {
   padding: 12px 0;
   border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.event-detail .time-slots .time-slot {
+  display: flex;
+  justify-content: space-between;
 }
 
 .event-detail .time-slots .time-slot .time-info {
@@ -227,4 +289,16 @@ input[type="button"] {
 
 .event-detail .map-wrapper .map h4 {
   margin-bottom: 20px;
+}
+
+.add-event-form .inputs .input-wrapper {
+  display: flex;
+  justify-content: start;
+  align-content: center;
+  flex-direction: column;
+}
+
+.add-event-form .inputs .input-wrapper input {
+  margin: 0;
+  margin-bottom: 30px;
 }

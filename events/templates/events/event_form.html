@@ -1,0 +1,35 @@
+{% extends 'base_generic.html' %}
+
+
+{% block content %}
+
+<form method="post" class="add-event-form">
+  {% csrf_token %} 
+  <div class="row inputs">
+    <div class="col-md-4">
+      <div class="input-wrapper">
+        {{form.title.label}} {{form.title}}
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-wrapper">
+        {{form.tags.label}} {{form.tags}}
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-wrapper">
+        {{form.place.label}} {{form.place}}
+      </div>
+    </div>
+  </div>
+
+  <input type="submit" value="Next" />
+</form>
+
+  
+{% endblock content %}
+
+
+  

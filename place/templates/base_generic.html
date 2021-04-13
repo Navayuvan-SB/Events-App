@@ -30,6 +30,7 @@
   <body>
     <div class="container">
       <div class="row">
+        {% block sidebar %}
         <div class="col-sm-2 logout-wrapper">
 
             <a href="{% url 'logout' %}?next={{request.path}}">Logout</a>
@@ -37,11 +38,11 @@
         </div>
 
         <div class="col-sm-8 padding-top-1">
-          {% block sidebar %}
+        
           <ul class="sidebar-nav">
             <li></li>
           </ul>
-          {% endblock %}
+          
         </div>
 
         <div class="col-sm-2 user-wrapper">
@@ -55,8 +56,9 @@
             {{user}}
           {% endif %}
           </p>
-
+          
         </div>
+        {% endblock %}
 
         <div class="col-sm-12 padding-top-1">
           {% block content %}{% endblock %} {% block pagination %} 

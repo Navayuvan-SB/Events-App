@@ -13,6 +13,9 @@ class Place(models.Model):
     city = models.CharField(max_length=50)
     phone = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.title
+
 
 class PlaceType(models.Model):
 
@@ -20,3 +23,6 @@ class PlaceType(models.Model):
         max_length=100, verbose_name='Type of the place')
 
     place = models.ForeignKey('Place', on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.place_type

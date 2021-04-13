@@ -23,6 +23,7 @@ from .views import sign_up_user
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('event/', include('events.urls')),
+    path('place/', include('place.urls')),
     path('', RedirectView.as_view(url='event/', permanent=True)),
 ]
 
